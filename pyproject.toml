@@ -1,0 +1,23 @@
+[project]
+name = "nano-agent"
+version = "0.1.0"
+description = "An agent that can help you to finish workload."
+authors = [
+    { name="Tangefly", email="3175881932@qq.com" }
+]
+dependencies = [
+    "fastapi",
+    "requests",
+    "openai",
+    "docker",
+    "uvicorn[standard]"
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agent*", "manager*", "tools*", "skills*"]
+exclude = ["frontend*"]
